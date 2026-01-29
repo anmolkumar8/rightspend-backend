@@ -48,8 +48,8 @@ build/
 ############################################
 # 🐳 DOCKER (OPTIONAL / FUTURE)
 ############################################
-Dockerfile
-docker-compose.yml
+#Dockerfile
+#docker-compose.yml
 
 ############################################
 # 🗑 LOGS / TEMP
