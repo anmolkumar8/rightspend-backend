@@ -1,0 +1,69 @@
+############################################
+# 🔐 SECURITY / SECRETS (VERY IMPORTANT)
+############################################
+application-dev.yml
+application-dev.yaml
+application-local.yml
+.env
+*.env
+*.key
+*.pem
+
+############################################
+# 🧪 BUILD OUTPUT (MAVEN / GRADLE)
+############################################
+target/
+build/
+*.jar
+*.war
+*.ear
+
+############################################
+# 🧰 MAVEN
+############################################
+.mvn/wrapper/maven-wrapper.jar
+
+############################################
+# 🖥 IDE FILES
+############################################
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse / STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### VS Code ###
+.vscode/
+
+############################################
+# 🐳 DOCKER (OPTIONAL / FUTURE)
+############################################
+Dockerfile
+docker-compose.yml
+
+############################################
+# 🗑 LOGS / TEMP
+############################################
+*.log
+*.tmp
+
+############################################
+# 🖥 OS FILES
+############################################
+.DS_Store
+Thumbs.db
+
+############################################
+# 📄 DOCUMENTATION / MISC
+############################################
+HELP.md
