@@ -36,18 +36,19 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
             """)
     List<Object[]> getCategorySummary(@Param("email") String email);
 
-    /* ================= MONTHLY SUMMARY ================= */
+    /* ================= MONTHLY SUMMARY (POSTGRES FIX) ================= */
 
-    @Query("""
+    @Query(value = """
                 SELECT
-                    FUNCTION('YEAR', e.date),
-                    FUNCTION('MONTH', e.date),
+                    EXTRACT(YEAR FROM e.date) AS year,
+                    EXTRACT(MONTH FROM e.date) AS month,
                     COALESCE(SUM(e.amount), 0)
-                FROM Expense e
-                WHERE e.user.email = :email
-                GROUP BY FUNCTION('YEAR', e.date), FUNCTION('MONTH', e.date)
-                ORDER BY FUNCTION('YEAR', e.date), FUNCTION('MONTH', e.date)
-            """)
+                FROM expenses e
+                JOIN users u ON e.user_id = u.id
+                WHERE u.email = :email
+                GROUP BY year, month
+                ORDER BY year, month
+            """, nativeQuery = true)
     List<Object[]> getMonthlySummary(@Param("email") String email);
 
     /* ================= DATE RANGE FILTER ================= */
