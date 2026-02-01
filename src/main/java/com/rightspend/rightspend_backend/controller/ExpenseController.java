@@ -68,7 +68,7 @@ public class ExpenseController {
 
     // ================= SUMMARY APIs =================
 
-    // ✅ TOTAL EXPENSE
+    // TOTAL EXPENSE
     @GetMapping("/summary/total")
     public ResponseEntity<Double> getTotalExpense(Authentication authentication) {
 
@@ -77,7 +77,7 @@ public class ExpenseController {
                 expenseService.getTotalExpense(email));
     }
 
-    // ✅ CATEGORY SUMMARY
+    // CATEGORY SUMMARY
     @GetMapping("/summary/category")
     public ResponseEntity<List<Map<String, Object>>> getCategorySummary(
             Authentication authentication) {
@@ -87,7 +87,7 @@ public class ExpenseController {
                 expenseService.getCategorySummary(email));
     }
 
-    // ✅ MONTHLY SUMMARY
+    // MONTHLY SUMMARY
     @GetMapping("/summary/monthly")
     public ResponseEntity<List<Map<String, Object>>> getMonthlySummary(
             Authentication authentication) {
@@ -97,7 +97,7 @@ public class ExpenseController {
                 expenseService.getMonthlySummary(email));
     }
 
-    // ✅ DASHBOARD API
+    // DASHBOARD API
     @GetMapping("/dashboard")
     public ResponseEntity<?> getDashboard(Authentication authentication) {
 
